@@ -21,10 +21,6 @@ mongoose.connection.once('open', async () => {
     console.log('Database seeded');
 });
 
-app.use(cors({
-    origin: 'https://coff-z-frontend-468753973815.us-central1.run.app'
-}));
-
 // Routes
 app.use('/user', userRoutes);
 app.use('/config', configRoutes);
