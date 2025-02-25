@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -9,7 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const MONGO_URI = process.env.DATABASE_URL || "mongodb://@mongo_db:27017/zealthy?authSource=admin";
+const MONGO_URI = process.env.DATABASE_URL || 'mongodb://localhost:27017/zealthy';
 
 mongoose.connect(MONGO_URI)
     .then(() => console.log("MongoDB Connected"))
